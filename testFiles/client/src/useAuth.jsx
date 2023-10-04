@@ -11,7 +11,7 @@ export default function useAuth(code){
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const res = await fetch('http://localhost:5173/login/', {
+            const res = await fetch('http://localhost:3000/login/', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -20,10 +20,10 @@ export default function useAuth(code){
             });
     
             if (res.ok) {
-              const data = await res.json();
-              setAccessToken(data.accessToken)
-              setRefreshToken(data.refreshToken)
-              setExpiresIn(data.expiresIn)
+              const newData = await res.json();
+              setAccessToken(newData.accessToken);
+              setRefreshToken(newData.refreshToken);
+              setExpiresIn(newData.expiresIn);
             } else {
               console.error('Failed to fetch data:', res.statusText);
             }
@@ -34,6 +34,8 @@ export default function useAuth(code){
         };
     
         fetchData();
+        //console.log('got past fetch data');
+        console.log(accessToken, ' here');
         return accessToken; //Testing to see if I am able to get a single token from the three
       }, [code]);
     /*

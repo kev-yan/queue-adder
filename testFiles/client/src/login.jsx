@@ -2,7 +2,7 @@ import React from "react"
 import { Container } from "react-bootstrap"
 
 
-const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=0792a98f3e364fd9859e0c3e06ed485c&response_type=code&redirect_uri=http://localhost:5173&scope=streaming%20user-read-email%20user-read-private%20user-modify-playback-state%20user-read-playback-state%20user-read-recently-played"
+const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=0792a98f3e364fd9859e0c3e06ed485c&response_type=code&redirect_uri=http://localhost:5173/login/&scope=streaming%20user-read-email%20user-read-private%20user-modify-playback-state%20user-read-playback-state%20user-read-recently-played"
 
 export default function Login(){
     return (
